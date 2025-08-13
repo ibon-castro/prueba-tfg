@@ -80,7 +80,7 @@ export const FeaturesSection = () => {
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Powerful features designed to make collaborative coding seamless, 
-            productive, and enjoyable for teams of any size.
+            productive, and enjoyable for teams of any size with YunoCode.
           </p>
         </div>
 

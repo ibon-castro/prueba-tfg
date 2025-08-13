@@ -1,0 +1,8 @@
+<svg viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+  <text x="10" y="40" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="white">
+    YunoCode
+  </text>
+  <circle cx="170" cy="30" r="15" fill="white" opacity="0.2"/>
+  <circle cx="175" cy="25" r="8" fill="white" opacity="0.4"/>
+  <circle cx="180" cy="35" r="5" fill="white"/>
+</svg>

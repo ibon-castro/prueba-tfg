@@ -27,7 +27,7 @@ console.log(fibonacci(10)); // Output: 55
             </span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Experience the power of real-time collaboration with our 
+            Experience the power of real-time collaboration with YunoCode's 
             intuitive code editor interface.
           </p>
         </div>
