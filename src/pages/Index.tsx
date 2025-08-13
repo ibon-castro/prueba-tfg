@@ -3,7 +3,6 @@ import { Header } from "@/components/Header";
 import { HeroSection } from "@/components/HeroSection";
 import { FeaturesSection } from "@/components/FeaturesSection";
 import { EditorPreview } from "@/components/EditorPreview";
-import { Footer } from "@/components/Footer";
 import { AuthModal } from "@/components/AuthModal";
 
 const Index = () => {
@@ -28,7 +27,6 @@ const Index = () => {
         <FeaturesSection />
         <EditorPreview />
       </main>
-      <Footer />
       <AuthModal
         type={authModal}
         isOpen={authModal !== null}

@@ -34,7 +34,7 @@ export const HeroSection = ({ onGetStarted }: HeroSectionProps) => {
             
             <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
               The collaborative code editor that brings your team together. 
-              Write, edit, and execute code simultaneously with YunoCode's powerful 
+              Write, edit, and execute code simultaneously with powerful 
               real-time features.
             </p>
           </div>

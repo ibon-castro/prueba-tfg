@@ -1,9 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
-import { ThemeToggle } from "@/components/ThemeToggle";
+import { Code, Menu, X } from "lucide-react";
 import { AuthModal } from "./AuthModal";
-import { useTheme } from "@/components/theme-provider";
 
 interface HeaderProps {
   onNavigate?: (section: string) => void;
@@ -12,12 +10,12 @@ interface HeaderProps {
 export const Header = ({ onNavigate }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [authModal, setAuthModal] = useState<"login" | "signup" | null>(null);
-  const { theme } = useTheme();
 
   const navigation = [
     { name: "Features", href: "#features" },
     { name: "How it Works", href: "#how-it-works" },
-    { name: "Contact", href: "/contact" },
+    { name: "Pricing", href: "#pricing" },
+    { name: "Contact", href: "#contact" },
   ];
 
   return (
@@ -27,13 +25,15 @@ export const Header = ({ onNavigate }: HeaderProps) => {
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <div className="flex items-center space-x-2">
-              <img 
-                src={theme === 'dark' ? "/logo-white.svg" : "/logo-black.svg"}
-                alt="YunoCode" 
-                className="h-8 w-auto"
-              />
+              <div className="bg-gradient-primary p-2 rounded-lg">
+                <Code className="h-6 w-6 text-white" />
+              </div>
+              <span className="text-xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+                CodeSync
+              </span>
             </div>
 
+            {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
               {navigation.map((item) => (
                 <a
@@ -42,11 +42,7 @@ export const Header = ({ onNavigate }: HeaderProps) => {
                   className="text-muted-foreground hover:text-foreground transition-colors duration-200"
                   onClick={(e) => {
                     e.preventDefault();
-                    if (item.href.startsWith("/")) {
-                      window.location.href = item.href;
-                    } else {
-                      onNavigate?.(item.href.replace("#", ""));
-                    }
+                    onNavigate?.(item.href.replace("#", ""));
                   }}
                 >
                   {item.name}
@@ -54,9 +50,8 @@ export const Header = ({ onNavigate }: HeaderProps) => {
               ))}
             </nav>
 
-            {/* Auth Buttons & Theme Toggle */}
+            {/* Auth Buttons */}
             <div className="hidden md:flex items-center space-x-4">
-              <ThemeToggle />
               <Button
                 variant="ghost"
                 onClick={() => setAuthModal("login")}
@@ -74,8 +69,7 @@ export const Header = ({ onNavigate }: HeaderProps) => {
             </div>
 
             {/* Mobile menu button */}
-            <div className="md:hidden flex items-center space-x-2">
-              <ThemeToggle />
+            <div className="md:hidden">
               <Button
                 variant="ghost"
                 size="sm"
@@ -97,11 +91,7 @@ export const Header = ({ onNavigate }: HeaderProps) => {
                     className="text-muted-foreground hover:text-foreground transition-colors duration-200 px-4 py-2"
                     onClick={(e) => {
                       e.preventDefault();
-                      if (item.href.startsWith("/")) {
-                        window.location.href = item.href;
-                      } else {
-                        onNavigate?.(item.href.replace("#", ""));
-                      }
+                      onNavigate?.(item.href.replace("#", ""));
                       setIsMenuOpen(false);
                     }}
                   >

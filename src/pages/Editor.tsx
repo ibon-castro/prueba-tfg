@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 
 const Editor = () => {
-  const [code, setCode] = useState(`// Welcome to YunoCode!
+  const [code, setCode] = useState(`// Welcome to CodeSync!
 // Start collaborating with your team in real-time
 
 function fibonacci(n) {
@@ -58,7 +58,7 @@ F(9) = 34`);
         <div className="flex items-center space-x-4">
           <div className="flex items-center space-x-2">
             <Code className="w-5 h-5 text-primary" />
-            <span className="font-semibold text-primary">YunoCode</span>
+            <span className="font-semibold text-primary">CodeSync</span>
           </div>
           <div className="flex items-center space-x-2 text-sm">
             <Folder className="w-4 h-4" />
