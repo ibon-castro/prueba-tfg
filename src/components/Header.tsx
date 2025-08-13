@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Code, Menu, X } from "lucide-react";
 import { AuthModal } from "./AuthModal";
 import { ThemeToggle } from "./ThemeToggle";
+import { useTheme } from "next-themes";
 
 interface HeaderProps {
   onNavigate?: (section: string) => void;
@@ -11,6 +12,7 @@ interface HeaderProps {
 export const Header = ({ onNavigate }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [authModal, setAuthModal] = useState<"login" | "signup" | null>(null);
+  const { theme } = useTheme();
 
   const navigation = [
     { name: "Features", href: "#features" },
@@ -26,11 +28,13 @@ export const Header = ({ onNavigate }: HeaderProps) => {
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <div className="flex items-center space-x-2">
-              <div className="bg-gradient-primary p-2 rounded-lg">
-                <Code className="h-6 w-6 text-white" />
-              </div>
+              <img
+                src={theme === "dark" ? "/logo-white.svg" : "/logo-black.svg"}
+                alt="YunoCode Logo"
+                className="h-8 w-8"
+              />
               <span className="text-xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
-                CodeSync
+                YunoCode
               </span>
             </div>
 
