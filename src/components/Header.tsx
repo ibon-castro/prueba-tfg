@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Code, Menu, X } from "lucide-react";
 import { AuthModal } from "./AuthModal";
+import { ThemeToggle } from "./ThemeToggle";
 
 interface HeaderProps {
   onNavigate?: (section: string) => void;
@@ -50,8 +51,9 @@ export const Header = ({ onNavigate }: HeaderProps) => {
               ))}
             </nav>
 
-            {/* Auth Buttons */}
+            {/* Theme Toggle and Auth Buttons */}
             <div className="hidden md:flex items-center space-x-4">
+              <ThemeToggle />
               <Button
                 variant="ghost"
                 onClick={() => setAuthModal("login")}
@@ -68,8 +70,9 @@ export const Header = ({ onNavigate }: HeaderProps) => {
               </Button>
             </div>
 
-            {/* Mobile menu button */}
-            <div className="md:hidden">
+            {/* Mobile theme toggle and menu button */}
+            <div className="md:hidden flex items-center space-x-2">
+              <ThemeToggle />
               <Button
                 variant="ghost"
                 size="sm"
